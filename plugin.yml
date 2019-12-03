@@ -1,0 +1,9 @@
+name: SpawnMarcJus
+version: 1.0
+author: MarcJus
+main: fr.marcjus.spawn.Main
+commands:
+  spawn:
+    description: Permet de se téléporter au spawn
+  setspawn:
+    description: Permet de définir le spawn
