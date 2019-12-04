@@ -10,16 +10,16 @@ import org.bukkit.entity.Player;
 import fr.marcjus.spawn.Main;
 
 public class CommandSetSpawn implements CommandExecutor {
-	
+
 	private Main main;
-	
+
 	public CommandSetSpawn(Main main) {
 		this.main = main;
 	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender instanceof Player){
+		if (sender instanceof Player) {
 			Player player = (Player) sender;
 			Location loc = player.getLocation();
 			Configuration config = main.getConfig();
@@ -31,7 +31,7 @@ public class CommandSetSpawn implements CommandExecutor {
 			config.set("spawn.world", loc.getWorld().getName());
 			player.sendMessage(config.getString("messages.setspawn").replace('&', '§'));
 			main.saveConfig();
-		}else{
+		} else {
 			sender.sendMessage(main.getConfig().getString("messages.deny").replace('&', '§'));
 		}
 		return false;

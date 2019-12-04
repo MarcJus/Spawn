@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import fr.marcjus.spawn.Main;
 
 public class CommandSpawn implements CommandExecutor {
-	
+
 	private Main main;
 
 	public CommandSpawn(Main main) {
@@ -22,7 +22,7 @@ public class CommandSpawn implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Configuration config = main.getConfig();
-		if(sender instanceof Player){
+		if (sender instanceof Player) {
 			Player player = (Player) sender;
 			World world = Bukkit.getWorld(main.getConfig().getString("spawn.world"));
 			double x = config.getDouble("spawn.x");
@@ -30,7 +30,7 @@ public class CommandSpawn implements CommandExecutor {
 			double z = config.getDouble("spawn.z");
 			Location loc = new Location(world, x, y, z);
 			player.teleport(loc);
-		}else{
+		} else {
 			sender.sendMessage(config.getString("messages.deny").replace('&', '§'));
 		}
 		return false;
