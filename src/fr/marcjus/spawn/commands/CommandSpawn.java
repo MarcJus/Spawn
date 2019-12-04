@@ -28,9 +28,7 @@ public class CommandSpawn implements CommandExecutor {
 			double x = config.getDouble("spawn.x");
 			double y = config.getDouble("spawn.y");
 			double z = config.getDouble("spawn.z");
-			float yaw = config.getInt("spawn.yam");
-			float pitch = config.getInt("spawn.pitch");
-			Location loc = new Location(world, x, y, z, yaw, pitch);
+			Location loc = new Location(world, x, y, z);
 			player.teleport(loc);
 		}else{
 			sender.sendMessage(config.getString("messages.deny").replace('&', '§'));

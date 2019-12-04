@@ -3,8 +3,6 @@ spawn:
   x: -369.5
   y: 69.5
   z: 391.5
-  yaw: -180f
-  pitch: 0f
   world: world
 messages:
   deny: "&4Vous devez être un joueur pour executer cette commande ! "
